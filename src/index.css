@@ -1,3 +1,62 @@
+/* Global Desgin Palette */
+
 :root{
-  
+  /* BACKGROUND COLORS */
+  --color-bg-primary: #110720;
+  --color-bg-secondary: #020618;
+  --color-bg-card: #070D1F;
+  --color-bg-elevated: #0D1025;
+
+  /* PURPLE ACCENTS */
+  --color-purple: #C27AFF;
+  --color-purple-vivid: #8200DB;
+  --color-purple-hover: #A855F7;
+  --color-purple-soft: rgba(194, 122, 255, 0.12);
+
+  /* TEXT COLORS */
+  --color-text-primary: #F7F4FC;
+  --color-text-secondary: #B9B0C8;
+  --color-text-muted: #81778F;
+
+  /* BORDERS */
+  --color-border: #30203E;
+  --color-border-strong: #49305F;
+
+  /* STATUS COLORS */
+  --color-success: #34D399;
+  --color-error: #F87171;
+
+  /* GRADIENTS */
+  --gradient-primary: linear-gradient(
+    135deg,
+    #8200DB 0%,
+    #C27AFF 100%
+  );
+
+  --gradient-background: linear-gradient(
+    135deg,
+    #110720 0%,
+    #020618 100%
+  );
+
+  /* GLOW EFFECTS */
+  --glow-purple: 0 0 30px rgba(130, 0, 219, 0.25);
+  --glow-purple-strong: 0 0 45px rgba(194, 122, 255, 0.35);
+
+  /* TYPOGRAPHY */
+  --font-primary: 'Inter', sans-serif;
+
+  /* LAYOUT */
+  --container-width: 1200px;
+  --section-spacing: 100px;
+
+  /* BORDER RADIUS */
+  --radius-small: 8px;
+  --radius-medium: 14px;
+  --radius-large: 20px;
+  --radius-full: 9999px;
+
+  /* TRANSITIONS */
+  --transition-fast: 200ms ease;
+  --transition-normal: 300ms ease;
 }
