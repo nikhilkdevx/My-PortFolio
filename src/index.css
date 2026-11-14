@@ -99,3 +99,47 @@ img{
   display: block;
   max-width: 100%;
 }
+
+/* ROOT APPLICATION */
+#root {
+  min-height: 100vh;
+}
+
+/* REUSABLE CONTENT CONTAINER */
+.container {
+  width: min(100% - 32px, var(--container-width));
+  margin-inline: auto;
+}
+
+/* ACCESSIBILITY */
+::selection {
+  background: var(--color-purple);
+  color: var(--color-bg-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 4px;
+}
+
+/* RESPONSIVE SECTION SPACING */
+@media (max-width: 768px) {
+  :root {
+    --section-spacing: 72px;
+  }
+}
+
+/* RESPECT REDUCED MOTION PREFERENCES */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
