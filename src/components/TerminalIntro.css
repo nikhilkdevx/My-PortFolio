@@ -1,0 +1,191 @@
+
+/* TERMINAL INTRO */
+
+.terminal-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-bg-primary);
+  padding: 20px;
+
+  animation: intro-fade-in 400ms ease both;
+}
+
+/* TERMINAL WINDOW */
+
+.terminal-window {
+  width: 100%;
+  max-width: 620px;
+
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-large);
+
+  overflow: hidden;
+
+  box-shadow:
+    var(--glow-purple),
+    0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+/* TERMINAL HEADER */
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 14px 18px;
+
+  background: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.terminal-dots {
+  display: flex;
+  gap: 7px;
+}
+
+.terminal-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.terminal-dots span:nth-child(1) {
+  background: #FF5F57;
+}
+
+.terminal-dots span:nth-child(2) {
+  background: #FEBC2E;
+}
+
+.terminal-dots span:nth-child(3) {
+  background: #28C840;
+}
+
+.terminal-label {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-family: monospace;
+}
+
+/* TERMINAL CONTENT */
+
+.terminal-content {
+  padding: 35px;
+  font-family: monospace;
+}
+
+.terminal-content h1 {
+  color: var(--color-purple);
+  font-size: clamp(30px, 6vw, 48px);
+  letter-spacing: 5px;
+
+  text-shadow: 0 0 25px rgba(194, 122, 255, 0.35);
+
+  margin-bottom: 8px;
+}
+
+.terminal-welcome {
+  color: var(--color-text-secondary);
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.terminal-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.terminal-lines p {
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  opacity: 0;
+
+  animation: terminal-line-appear 250ms ease forwards;
+}
+
+.terminal-lines p:nth-child(1) {
+  color: var(--color-purple);
+  animation-delay: 150ms;
+}
+
+.terminal-lines p:nth-child(2) {
+  animation-delay: 350ms;
+}
+
+.terminal-lines p:nth-child(3) {
+  animation-delay: 550ms;
+}
+
+.terminal-lines p:nth-child(4) {
+  color: var(--color-purple);
+  animation-delay: 750ms;
+}
+
+/* CURSOR */
+
+.terminal-cursor {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+
+  color: var(--color-purple);
+}
+
+.cursor {
+  width: 8px;
+  height: 17px;
+  background: var(--color-purple);
+  animation: cursor-blink 800ms step-end infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes intro-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes terminal-line-appear {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .terminal-content {
+    padding: 24px 20px;
+  }
+
+  .terminal-lines p {
+    font-size: 11px;
+  }
+}
