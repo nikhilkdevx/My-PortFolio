@@ -19,13 +19,12 @@ function App() {
       {!introComplete && (
         <TerminalIntro onComplete={handleIntroComplete} />
       )}
-
+      <Navbar/>
       <main
         className={`portfolio-shell ${
           introComplete ? "is-visible" : "is-hidden"
         }`}
       >
-        <Navbar/>
         <Hero/>
       </main>
     </>
