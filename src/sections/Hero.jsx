@@ -1,0 +1,74 @@
+
+import "./Hero.css";
+
+function Hero() {
+  return (
+    <section className="hero-section" id="home">
+      <div className="hero-container">
+
+        {/* Left: Developer illustration */}
+        <div className="hero-visual">
+          <div className="hero-avatar-glow">
+            {/* We'll add the 3D avatar image here */}
+            <div className="avatar-placeholder">
+              <span>NIK.DEV</span>
+              <p>Developer illustration</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Introduction */}
+        <div className="hero-introduction">
+          <p className="hero-greeting">
+            Hello, I'm <span>Nik</span>
+          </p>
+
+          <p className="hero-preheading">
+            A developer who
+          </p>
+
+          <h1 className="hero-title">
+            Believes ideas deserve to be{" "}
+            <span>built.</span>
+          </h1>
+
+          <p className="hero-description">
+            Building full-stack applications and exploring
+            the engineering behind them.
+          </p>
+
+          <div className="hero-buttons">
+            <a href="#projects" className="hero-button primary">
+              Explore Projects
+            </a>
+
+            <a href="#about" className="hero-button secondary">
+              About Me
+            </a>
+          </div>
+        </div>
+
+        {/* Introduction below the main hero */}
+        <div className="hero-details">
+          <h2>
+            I'm a <span>Full-Stack Developer</span>
+          </h2>
+
+          <p className="hero-education">
+            B.Sc. Computer Science student at
+            <span> BITS Pilani.</span>
+          </p>
+
+          <p className="hero-bio">
+            A computer science student building practical
+            applications and exploring software engineering,
+            system design and real-world technology.
+          </p>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+export default Hero;
