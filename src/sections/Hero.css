@@ -194,6 +194,24 @@
   text-align: left;
 }
 
+.developer-avatar {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 15px 35px rgba(130, 0, 219, 0.25)
+  );
+
+  transition: transform 300ms ease;
+}
+
+.developer-avatar:hover {
+  transform: translateY(-6px);
+}
+
 /* Responsive layout */
 
 @media (max-width: 768px) {

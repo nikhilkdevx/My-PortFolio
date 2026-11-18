@@ -9,11 +9,11 @@ function Hero() {
         {/* Left: Developer illustration */}
         <div className="hero-visual">
           <div className="hero-avatar-glow">
-            {/* We'll add the 3D avatar image here */}
-            <div className="avatar-placeholder">
-              <span>NIK.DEV</span>
-              <p>Developer illustration</p>
-            </div>
+             <img
+                src="/images/developer-avatar.png"
+                alt="3D illustration of a developer working on a laptop"
+                className="developer-avatar"
+              />
           </div>
         </div>
 
