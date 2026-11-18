@@ -184,6 +184,16 @@
   line-height: 1.8;
 }
 
+.hero-introduction {
+  max-width: 620px;
+  text-align: left;
+}
+
+.hero-details {
+  grid-column: 1 / -1;
+  text-align: left;
+}
+
 /* Responsive layout */
 
 @media (max-width: 768px) {
@@ -229,3 +239,4 @@
     max-width: 300px;
   }
 }
+
