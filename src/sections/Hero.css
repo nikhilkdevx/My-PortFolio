@@ -212,6 +212,31 @@
   transform: translateY(-6px);
 }
 
+.hero-greeting-wrap {
+  position: relative;
+  width: fit-content;
+  margin-bottom: 28px;
+}
+
+.hero-greeting {
+  margin-bottom: 0;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+}
+
+.hero-greeting-arrow {
+  position: absolute;
+  width: 180px;
+  height: 90px;
+
+  right: calc(100% + 5px);
+  top: -2px;
+
+  color: var(--color-text-primary);
+  overflow: visible;
+  pointer-events: none;
+}
+
 /* Responsive layout */
 
 @media (max-width: 768px) {
@@ -255,6 +280,10 @@
 
   .hero-avatar-glow {
     max-width: 300px;
+  }
+
+  .hero-greeting-arrow {
+    display: none;
   }
 }
 

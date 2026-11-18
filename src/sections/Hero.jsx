@@ -19,9 +19,37 @@ function Hero() {
 
         {/* Right: Introduction */}
         <div className="hero-introduction">
-          <p className="hero-greeting">
-            Hello, I'm <span>Nik</span>
-          </p>
+          <div className="hero-greeting-wrap">
+            <p className="hero-greeting">
+              Hello, I'm <span>Nik</span>
+            </p>
+
+            <svg
+              className="hero-greeting-arrow"
+              viewBox="0 0 180 90"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M170 8 C125 5, 85 20, 48 65"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeDasharray="2 6"
+                fill="none"
+              />
+
+              <path
+                d="M49 65 L51 48 M49 65 L66 59"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeDasharray="2 6"
+                fill="none"
+              />
+            </svg>
+          </div>
 
           <p className="hero-preheading">
             A developer who
