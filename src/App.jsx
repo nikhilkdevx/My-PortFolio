@@ -3,6 +3,7 @@ import { useCallback, useState } from "react";
 import TerminalIntro from "./components/TerminalIntro";
 import "./App.css";
 import Hero from "./sections/Hero";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [introComplete, setIntroComplete] = useState(() => {
@@ -24,6 +25,7 @@ function App() {
           introComplete ? "is-visible" : "is-hidden"
         }`}
       >
+        <Navbar/>
         <Hero/>
       </main>
     </>
