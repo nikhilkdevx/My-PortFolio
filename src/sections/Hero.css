@@ -154,6 +154,8 @@
 
 .hero-details {
   grid-column: 1 / -1;
+  text-align: left;
+  padding-left: clamp(0px,5.25vw,86px);
 }
 
 .hero-details h2 {
@@ -271,6 +273,7 @@
 
   .hero-details {
     order: 3;
+    padding-left: 0;
     text-align: center;
   }
 

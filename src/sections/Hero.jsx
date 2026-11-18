@@ -1,4 +1,5 @@
 
+import RotatingHeadline from "../components/RotatingHeadline";
 import "./Hero.css";
 
 function Hero() {
@@ -37,7 +38,6 @@ function Hero() {
                 strokeLinecap="round"
               />
 
-
               <path
                 d="M49 65 L51 48 M49 65 L66 59"
                 stroke="currentColor"
@@ -75,9 +75,7 @@ function Hero() {
 
         {/* Introduction below the main hero */}
         <div className="hero-details">
-          <h2>
-            I'm a <span>Full-Stack Developer</span>
-          </h2>
+          <RotatingHeadline/>
 
           <p className="hero-education">
             B.Sc. Computer Science student at
