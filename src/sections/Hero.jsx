@@ -33,20 +33,17 @@ function Hero() {
               <path
                 d="M170 8 C125 5, 85 20, 48 65"
                 stroke="currentColor"
-                strokeWidth="1.8"
+                strokeWidth="1.6"
                 strokeLinecap="round"
-                strokeDasharray="2 6"
-                fill="none"
               />
+
 
               <path
                 d="M49 65 L51 48 M49 65 L66 59"
                 stroke="currentColor"
-                strokeWidth="1.8"
+                strokeWidth="1.6"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeDasharray="2 6"
-                fill="none"
               />
             </svg>
           </div>
