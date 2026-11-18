@@ -57,11 +57,6 @@ function Hero() {
             <span>built.</span>
           </h1>
 
-          <p className="hero-description">
-            Building full-stack applications and exploring
-            the engineering behind them.
-          </p>
-
           <div className="hero-buttons">
             <a href="#projects" className="hero-button primary">
               Explore Projects

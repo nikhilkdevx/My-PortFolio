@@ -57,14 +57,6 @@
   font-weight: 500;
 }
 
-.hero-description {
-  max-width: 570px;
-  margin: 20px 0 0;
-  color: var(--color-text-secondary);
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
 .hero-actions {
   margin-top: 32px;
 }
@@ -93,10 +85,6 @@
 @media (max-width: 600px) {
   .hero-content h1 {
     font-size: 3.5rem;
-  }
-
-  .hero-description {
-    font-size: 0.95rem;
   }
 }
 
