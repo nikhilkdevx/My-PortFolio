@@ -4,6 +4,7 @@ import TerminalIntro from "./components/TerminalIntro";
 import "./App.css";
 import Hero from "./sections/Hero";
 import Navbar from "./components/Navbar";
+import Projects from "./sections/Projects";
 
 function App() {
   const [introComplete, setIntroComplete] = useState(() => {
@@ -26,6 +27,7 @@ function App() {
         }`}
       >
         <Hero/>
+        <Projects/>
       </main>
     </>
   );
