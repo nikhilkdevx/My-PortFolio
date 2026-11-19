@@ -1,0 +1,52 @@
+
+.projects-section {
+  padding-block: var(--section-spacing);
+  background-color: var(--color-bg-primary);
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.projects-eyebrow {
+  color: var(--color-purple);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  margin-bottom: 12px;
+}
+
+.projects-title {
+  color: var(--color-text-primary);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.projects-title span {
+  color: var(--color-purple);
+}
+
+.projects-counter {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .projects-header {
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .projects-counter {
+    font-size: 0.75rem;
+  }
+}
