@@ -1,10 +1,16 @@
 
-/* PROJECTS SECTION */
+/* =========================================
+   PROJECTS SECTION
+========================================= */
 
 .projects-section {
   padding-block: var(--section-spacing);
   background-color: var(--color-bg-primary);
 }
+
+/* =========================================
+   SECTION HEADER
+========================================= */
 
 .projects-header {
   display: flex;
@@ -15,11 +21,11 @@
 }
 
 .projects-eyebrow {
+  margin-bottom: 12px;
   color: var(--color-purple);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.16em;
-  margin-bottom: 12px;
 }
 
 .projects-title {
@@ -34,14 +40,11 @@
   color: var(--color-purple);
 }
 
-.projects-counter {
-  color: var(--color-text-muted);
-  font-size: 0.875rem;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
-}
 
-/* PROJECT LAYOUT */
+
+/* =========================================
+   PROJECTS LAYOUT
+========================================= */
 
 .projects-layout {
   display: grid;
@@ -54,16 +57,20 @@
   gap: 24px;
 }
 
-/* PROJECT CARD */
+/* =========================================
+   PROJECT CARD
+========================================= */
 
 .project-card {
   display: flex;
   flex-direction: column;
   min-width: 0;
   overflow: hidden;
-  background: var(--color-bg-card);
+
+  background-color: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-medium);
+
   transition:
     border-color var(--transition-normal),
     transform var(--transition-normal);
@@ -74,11 +81,15 @@
   transform: translateY(-4px);
 }
 
-/* FEATURED PROJECT */
+/* =========================================
+   FEATURED PROJECT — NEXAMEET
+========================================= */
 
 .project-card--featured {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(0, 1fr);
   min-height: 340px;
 }
 
@@ -87,33 +98,52 @@
 }
 
 .project-card--featured .project-content {
-  padding: clamp(28px, 4vw, 56px);
   justify-content: center;
+  padding: clamp(28px, 4vw, 56px);
 }
 
 .project-card--featured .project-name {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 
-/* PROJECT VISUAL */
+/* =========================================
+   PROJECT IMAGES
+========================================= */
 
 .project-visual {
   position: relative;
+  min-width: 0;
   min-height: 210px;
   overflow: hidden;
-  background: var(--color-bg-elevated);
+
+  background-color: var(--color-bg-elevated);
 }
 
 .project-visual img {
+  display: block;
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+  object-position: center;
+
   transition: transform 500ms ease;
 }
 
 .project-card:hover .project-visual img {
-  transform: scale(1.035);
+  transform: scale(1.025);
 }
+
+/* Featured image positioning */
+
+.project-card--featured .project-visual img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================
+   ASTRA PLACEHOLDER
+========================================= */
 
 .project-placeholder {
   display: flex;
@@ -121,9 +151,11 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
+
   width: 100%;
   height: 100%;
   min-height: 210px;
+
   background:
     radial-gradient(
       circle at center,
@@ -131,6 +163,7 @@
       transparent 65%
     ),
     var(--color-bg-elevated);
+
   color: var(--color-text-secondary);
   font-size: 0.7rem;
   font-weight: 600;
@@ -143,13 +176,17 @@
   line-height: 1;
 }
 
-/* PROJECT INFORMATION */
+/* =========================================
+   PROJECT CONTENT
+========================================= */
 
 .project-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+
+  min-width: 0;
   padding: 28px;
 }
 
@@ -169,13 +206,15 @@
 }
 
 .project-description {
+  max-width: 48ch;
   color: var(--color-text-secondary);
   font-size: 0.9rem;
   line-height: 1.75;
-  max-width: 48ch;
 }
 
-/* TECHNOLOGY BADGES */
+/* =========================================
+   TECHNOLOGY BADGES
+========================================= */
 
 .project-technologies {
   display: flex;
@@ -185,15 +224,21 @@
 
 .project-tech {
   padding: 6px 10px;
+
   color: var(--color-text-secondary);
-  background: var(--color-purple-soft);
+  background-color: var(--color-purple-soft);
+
   border: 1px solid var(--color-border);
   border-radius: var(--radius-small);
+
   font-size: 0.72rem;
   font-weight: 500;
+  white-space: nowrap;
 }
 
-/* PROJECT LINKS */
+/* =========================================
+   PROJECT LINKS
+========================================= */
 
 .project-links {
   display: flex;
@@ -206,32 +251,43 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+
   color: var(--color-text-primary);
   font-size: 0.85rem;
   font-weight: 600;
-  transition: color var(--transition-fast);
+
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .project-links a:hover {
   color: var(--color-purple);
+  transform: translateY(-2px);
 }
 
 .project-links a span {
   color: var(--color-purple);
 }
 
-/* COMING SOON */
+/* =========================================
+   COMING SOON BADGE
+========================================= */
 
 .project-coming-soon {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
   margin-top: 8px;
   padding: 8px 12px;
+
+  color: var(--color-purple);
+  background-color: var(--color-purple-soft);
+
   border: 1px solid var(--color-border-strong);
   border-radius: var(--radius-small);
-  color: var(--color-purple);
-  background: var(--color-purple-soft);
+
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -239,67 +295,15 @@
 .project-status-dot {
   width: 7px;
   height: 7px;
+  flex-shrink: 0;
+
+  background-color: currentColor;
   border-radius: 50%;
-  background: currentColor;
 }
 
-/* TABLET */
-
-@media (max-width: 900px) {
-  .project-card--featured {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card--featured .project-visual {
-    min-height: 300px;
-  }
-
-  .project-card--featured .project-content {
-    padding: 32px;
-  }
-
-  .projects-secondary {
-    gap: 16px;
-  }
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-  .projects-header {
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-
-  .projects-counter {
-    font-size: 0.75rem;
-  }
-
-  .projects-layout {
-    gap: 18px;
-  }
-
-  .projects-secondary {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .project-card--featured .project-visual {
-    min-height: 220px;
-  }
-
-  .project-content,
-  .project-card--featured .project-content {
-    padding: 24px;
-  }
-
-  .project-visual {
-    min-height: 190px;
-  }
-}
-
-/* HORIZONTAL SECONDARY CARDS */
+/* =========================================
+   DESKTOP — HORIZONTAL SECONDARY CARDS
+========================================= */
 
 @media (min-width: 1100px) {
   .projects-secondary .project-card {
@@ -310,6 +314,11 @@
 
   .projects-secondary .project-visual {
     min-height: 260px;
+  }
+
+  .projects-secondary .project-visual img {
+    object-fit: cover;
+    object-position: center;
   }
 
   .projects-secondary .project-content {
@@ -323,17 +332,144 @@
   }
 
   .projects-secondary .project-description {
-    font-size: 0.82rem;
-    line-height: 1.6;
+    font-size: 0.875rem;
+    line-height: 1.65;
   }
 
   .projects-secondary .project-tech {
-    font-size: 0.65rem;
     padding: 5px 7px;
+    font-size: 0.68rem;
   }
 
   .projects-secondary .project-links {
     gap: 16px;
     margin-top: 4px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1099px) {
+  .project-card--featured {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card--featured .project-visual {
+    height: 320px;
+    min-height: 0;
+  }
+
+  .project-card--featured .project-content {
+    padding: 32px;
+  }
+
+  .projects-secondary {
+    gap: 16px;
+  }
+
+  .projects-secondary .project-visual {
+    height: 220px;
+    min-height: 0;
+  }
+
+  .projects-secondary .project-content {
+    padding: 24px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .projects-header {
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .projects-title {
+    font-size: clamp(1.9rem, 7vw, 2.5rem);
+  }
+
+  .projects-layout {
+    gap: 18px;
+  }
+
+  .projects-secondary {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card--featured .project-visual {
+    height: 230px;
+  }
+
+  .projects-secondary .project-visual {
+    height: 220px;
+  }
+
+  .project-content,
+  .project-card--featured .project-content,
+  .projects-secondary .project-content {
+    padding: 24px;
+  }
+
+  .project-card--featured .project-name {
+    font-size: 1.8rem;
+  }
+
+  .project-description {
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .project-links {
+    gap: 20px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .projects-header {
+    flex-wrap: wrap;
+  }
+
+  .project-card--featured .project-visual,
+  .projects-secondary .project-visual {
+    height: 190px;
+  }
+
+  .project-content,
+  .project-card--featured .project-content,
+  .projects-secondary .project-content {
+    padding: 20px;
+  }
+
+  .project-tech {
+    font-size: 0.68rem;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-visual img,
+  .project-links a {
+    transition: none;
+  }
+
+  .project-card:hover,
+  .project-card:hover .project-visual img,
+  .project-links a:hover {
+    transform: none;
   }
 }

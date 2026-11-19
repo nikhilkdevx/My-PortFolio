@@ -34,7 +34,7 @@ const projects = [
     description:
       "An upcoming AI-powered conversational assistant.",
     technologies: [],
-    image: "",
+    image: "/images/astra.png",
     imageAlt: "",
     github: "",
     live: "",
@@ -146,9 +146,6 @@ function Projects() {
             </h2>
           </div>
 
-          <span className="projects-counter">
-            01 — {String(projects.length).padStart(2, "0")}
-          </span>
         </div>
 
         <div className="projects-layout">
