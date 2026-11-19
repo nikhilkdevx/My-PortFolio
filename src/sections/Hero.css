@@ -1,7 +1,5 @@
 
-/* ==============================
-   HERO SECTION — DESKTOP
-============================== */
+/* HERO SECTION — DESKTOP */
 
 .hero-section {
   min-height: calc(100vh - 80px);
@@ -196,9 +194,7 @@
 }
 
 
-/* ==============================
-   TABLET AND MOBILE
-============================== */
+/* TABLET AND MOBILE */
 
 @media (max-width: 768px) {
   .hero-section {
@@ -286,11 +282,6 @@
     font-size: 0.95rem;
   }
 }
-
-
-/* ==============================
-   SMALLER PHONES
-============================== */
 
 @media (max-width: 380px) {
   .hero-section {
