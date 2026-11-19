@@ -11,7 +11,7 @@ const projects = [
     image: "/images/nexameet.png",
     imageAlt: "NexaMeet video calling application",
     github: "https://github.com/nikhilkdevx/NexaMeet",
-    live: "",
+    live: "https://nexameet-fden.onrender.com",
     featured: true,
     status: "completed",
   },
