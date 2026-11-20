@@ -8,6 +8,7 @@ import Projects from "./sections/Projects";
 import "devicon/devicon.min.css";
 import TechStack from "./sections/TechStack";
 import About from "./sections/About";
+import Education from "./sections/Education";
 
 function App() {
   const [introComplete, setIntroComplete] = useState(() => {
@@ -33,6 +34,7 @@ function App() {
         <Projects/>
         <TechStack/>
         <About/>
+        <Education/>
       </main>
     </>
   );
