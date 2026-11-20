@@ -1,4 +1,5 @@
 
+import { useEffect, useRef, useState } from "react";
 import "./Projects.css";
 
 const projects = [
@@ -13,6 +14,19 @@ const projects = [
     github: "https://github.com/nikhilkdevx/NexaMeet",
     live: "https://nexameet-fden.onrender.com",
     featured: true,
+    status: "completed",
+  },
+  {
+    id: "portfolio",
+    title: "Personal Portfolio",
+    description:
+      "A responsive developer portfolio built with React, featuring interactive sections, project showcases, and a functional contact form.",
+    technologies: ["React", "Vite", "CSS3", "EmailJS"],
+    image: "/images/portfolio.png",
+    imageAlt: "Nik personal developer portfolio website",
+    github: "",
+    live: "",
+    featured: false,
     status: "completed",
   },
   {
@@ -35,7 +49,7 @@ const projects = [
       "An upcoming AI-powered conversational assistant.",
     technologies: [],
     image: "/images/astra.png",
-    imageAlt: "",
+    imageAlt: "Project Astra preview",
     github: "",
     live: "",
     featured: false,
@@ -69,7 +83,9 @@ function ProjectCard({ project }) {
 
       <div className="project-content">
         {project.featured && (
-          <span className="project-label">FEATURED PROJECT</span>
+          <span className="project-label">
+            FEATURED PROJECT
+          </span>
         )}
 
         <h3 className="project-name">{project.title}</h3>
@@ -124,6 +140,10 @@ function ProjectCard({ project }) {
 }
 
 function Projects() {
+  const carouselRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(2);
+
   const featuredProject = projects.find(
     (project) => project.featured
   );
@@ -131,6 +151,75 @@ function Projects() {
   const otherProjects = projects.filter(
     (project) => !project.featured
   );
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+
+    if (!carousel) return;
+
+    const updateCarousel = () => {
+      const cards = carousel.querySelectorAll(".project-card");
+      if (!cards.length) return;
+
+      const firstCard = cards[0];
+      const secondCard = cards[1];
+
+      const cardStep = secondCard
+        ? secondCard.offsetLeft - firstCard.offsetLeft
+        : firstCard.offsetWidth;
+
+      const index = cardStep
+        ? Math.round(carousel.scrollLeft / cardStep)
+        : 0;
+
+      const count = window.innerWidth <= 600 ? 1 : 2;
+      const maxIndex = Math.max(
+        0,
+        otherProjects.length - count
+      );
+
+      setVisibleCount(count);
+      setActiveIndex(Math.min(Math.max(index, 0), maxIndex));
+    };
+
+    updateCarousel();
+
+    carousel.addEventListener("scroll", updateCarousel, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", updateCarousel);
+
+    return () => {
+      carousel.removeEventListener("scroll", updateCarousel);
+      window.removeEventListener("resize", updateCarousel);
+    };
+  }, [otherProjects.length]);
+
+  const maxIndex = Math.max(
+    0,
+    otherProjects.length - visibleCount
+  );
+
+  const scrollToProject = (index) => {
+    const carousel = carouselRef.current;
+
+    if (!carousel) return;
+
+    const cards = carousel.querySelectorAll(".project-card");
+    const target = cards[index];
+
+    if (!target) return;
+
+    carousel.scrollTo({
+      left: target.offsetLeft - cards[0].offsetLeft,
+      behavior: window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches
+        ? "instant"
+        : "smooth",
+    });
+  };
 
   return (
     <section id="projects" className="projects-section">
@@ -145,7 +234,6 @@ function Projects() {
               Things I've <span>built.</span>
             </h2>
           </div>
-
         </div>
 
         <div className="projects-layout">
@@ -153,13 +241,81 @@ function Projects() {
             <ProjectCard project={featuredProject} />
           )}
 
-          <div className="projects-secondary">
-            {otherProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                project={project}
-              />
-            ))}
+          <div className="projects-carousel">
+            <div className="projects-carousel-header">
+              <span className="projects-carousel-label">
+                MORE PROJECTS
+              </span>
+
+              <div className="projects-carousel-controls">
+                <button
+                  type="button"
+                  className="projects-carousel-arrow"
+                  onClick={() =>
+                    scrollToProject(activeIndex - 1)
+                  }
+                  disabled={activeIndex === 0}
+                  aria-label="Previous projects"
+                >
+                  ←
+                </button>
+
+                <button
+                  type="button"
+                  className="projects-carousel-arrow"
+                  onClick={() =>
+                    scrollToProject(activeIndex + 1)
+                  }
+                  disabled={activeIndex >= maxIndex}
+                  aria-label="Next projects"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+
+            <div
+              className="projects-secondary"
+              ref={carouselRef}
+              role="region"
+              aria-roledescription="carousel"
+              aria-label="More portfolio projects"
+              tabIndex={0}
+            >
+              {otherProjects.map((project) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                />
+              ))}
+            </div>
+
+            <div
+              className="projects-carousel-indicators"
+              aria-label="Project carousel position"
+            >
+              {Array.from(
+                { length: maxIndex + 1 },
+                (_, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    className={`projects-carousel-dot ${
+                      activeIndex === index
+                        ? "projects-carousel-dot--active"
+                        : ""
+                    }`}
+                    onClick={() => scrollToProject(index)}
+                    aria-label={`Go to project group ${
+                      index + 1
+                    }`}
+                    aria-current={
+                      activeIndex === index ? "true" : undefined
+                    }
+                  />
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>
