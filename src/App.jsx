@@ -9,6 +9,7 @@ import "devicon/devicon.min.css";
 import TechStack from "./sections/TechStack";
 import About from "./sections/About";
 import Education from "./sections/Education";
+import Contact from "./sections/Contact";
 
 function App() {
   const [introComplete, setIntroComplete] = useState(() => {
@@ -35,6 +36,7 @@ function App() {
         <TechStack/>
         <About/>
         <Education/>
+        <Contact/>
       </main>
     </>
   );
