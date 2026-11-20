@@ -1,5 +1,12 @@
 
 import "./TechStack.css";
+import {
+  SiEjs,
+  SiExpress,
+  SiMongoose,
+  SiCloudinary,
+  SiRender,
+} from "react-icons/si";
 
 const techCategories = [
   {
@@ -40,18 +47,38 @@ const techCategories = [
   },
 ];
 
+const customIcons = {
+  ejs: SiEjs,
+  express: SiExpress,
+  mongoose: SiMongoose,
+  cloudinary: SiCloudinary,
+  render: SiRender,
+};
+
+
 function TechCard({ technology }) {
+  const CustomIcon = customIcons[technology.icon];
+
   return (
     <div
       className="tech-card"
       style={{ "--tech-color": technology.color }}
     >
-      <i
-        className={`devicon-${technology.icon}-plain colored tech-card__icon`}
-        aria-hidden="true"
-      />
+      {CustomIcon ? (
+        <CustomIcon
+          className="tech-card__icon"
+          aria-hidden="true"
+        />
+      ) : (
+        <i
+          className={`devicon-${technology.icon}-plain tech-card__icon`}
+          aria-hidden="true"
+        />
+      )}
 
-      <span className="tech-card__name">{technology.name}</span>
+      <span className="tech-card__name">
+        {technology.name}
+      </span>
     </div>
   );
 }
