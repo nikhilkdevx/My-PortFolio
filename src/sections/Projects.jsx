@@ -25,7 +25,7 @@ const projects = [
     image: "/images/portfolio.png",
     imageAlt: "Nik personal developer portfolio website",
     github: "https://github.com/nikhilkdevx/Nik",
-    live: "",
+    live: "https://nik-portfolio.onrender.com",
     featured: false,
     status: "completed",
   },
