@@ -22,12 +22,12 @@ const socialLinks = [
   {
     name: "Instagram",
     icon: FaInstagram,
-    url: "https://www.instagram.com/nkdevx", // Add your Instagram URL
+    url: "https://www.instagram.com/nkdevx", 
   },
   {
     name: "Email",
     icon: FaEnvelope,
-    url: "mailto:nkdevx.tech@gmail.com", // Add your email as mailto:you@example.com
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=nkdevx.tech%40gmail.com", 
   },
 ];
 
