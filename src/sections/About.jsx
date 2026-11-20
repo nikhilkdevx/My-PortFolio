@@ -17,17 +17,17 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: FaLinkedinIn,
-    url: "", // Add your LinkedIn URL
+    url: "https://www.linkedin.com/in/nikhilkumarkeshari", 
   },
   {
     name: "Instagram",
     icon: FaInstagram,
-    url: "", // Add your Instagram URL
+    url: "https://www.instagram.com/nkdevx", // Add your Instagram URL
   },
   {
     name: "Email",
     icon: FaEnvelope,
-    url: "", // Add your email as mailto:you@example.com
+    url: "mailto:nkdevx.tech@gmail.com", // Add your email as mailto:you@example.com
   },
 ];
 
