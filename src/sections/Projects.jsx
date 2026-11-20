@@ -24,7 +24,7 @@ const projects = [
     technologies: ["React", "Vite", "CSS3", "EmailJS"],
     image: "/images/portfolio.png",
     imageAlt: "Nik personal developer portfolio website",
-    github: "",
+    github: "https://github.com/nikhilkdevx/Nik",
     live: "",
     featured: false,
     status: "completed",
