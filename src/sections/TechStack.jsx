@@ -1,5 +1,7 @@
 
+import { useState } from "react";
 import "./TechStack.css";
+
 import {
   SiEjs,
   SiExpress,
@@ -55,7 +57,6 @@ const customIcons = {
   render: SiRender,
 };
 
-
 function TechCard({ technology }) {
   const CustomIcon = customIcons[technology.icon];
 
@@ -84,11 +85,17 @@ function TechCard({ technology }) {
 }
 
 function TechStack() {
+  const [activeCategory, setActiveCategory] = useState(0);
+
+  const selectedCategory = techCategories[activeCategory];
+
   return (
     <section className="tech-stack" id="tech-stack">
       <div className="container">
         <div className="tech-stack__header">
-          <span className="tech-stack__eyebrow">MY TOOLKIT</span>
+          <span className="tech-stack__eyebrow">
+            MY TOOLKIT
+          </span>
 
           <h2 className="tech-stack__title">
             Technologies I <span>work with.</span>
@@ -99,24 +106,38 @@ function TechStack() {
           </p>
         </div>
 
-        <div className="tech-stack__categories">
-          {techCategories.map((category) => (
-            <div className="tech-stack__category" key={category.title}>
-              <div className="tech-stack__category-heading">
-                <h3>{category.title}</h3>
-                <span className="tech-stack__heading-line" />
-              </div>
-
-              <div className="tech-stack__grid">
-                {category.technologies.map((technology) => (
-                  <TechCard
-                    key={technology.name}
-                    technology={technology}
-                  />
-                ))}
-              </div>
-            </div>
+        <div className="tech-stack__tabs" role="group" aria-label="Technology categories">
+          {techCategories.map((category, index) => (
+            <button
+              key={category.title}
+              type="button"
+              className={`tech-stack__tab ${
+                activeCategory === index
+                  ? "tech-stack__tab--active"
+                  : ""
+              }`}
+              aria-pressed={activeCategory === index}
+              onClick={() => setActiveCategory(index)}
+            >
+              {category.title}
+            </button>
           ))}
+        </div>
+
+        <div className="tech-stack__content">
+          <div className="tech-stack__category-heading">
+            <h3>{selectedCategory.title}</h3>
+            <span className="tech-stack__heading-line" />
+          </div>
+
+          <div className="tech-stack__grid">
+            {selectedCategory.technologies.map((technology) => (
+              <TechCard
+                key={technology.name}
+                technology={technology}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
