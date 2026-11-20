@@ -17,17 +17,17 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: FaLinkedinIn,
-    url: "", // Add your LinkedIn profile URL
+    url: "", // Add your LinkedIn URL
   },
   {
     name: "Instagram",
     icon: FaInstagram,
-    url: "", // Add your Instagram profile URL
+    url: "", // Add your Instagram URL
   },
   {
     name: "Email",
     icon: FaEnvelope,
-    url: "", // Add mailto:your-email@example.com
+    url: "", // Add your email as mailto:you@example.com
   },
 ];
 
@@ -46,11 +46,13 @@ function About() {
         </div>
 
         <div className="about__layout">
-          {/* Left: Portrait video */}
+          {/* LEFT: Introduction video */}
           <div className="about__video-column">
             <div className="about__video-frame">
               {/*
-                Future video:
+                When your video is ready, replace the
+                placeholder below with:
+
                 <video
                   controls
                   playsInline
@@ -82,7 +84,7 @@ function About() {
             </div>
           </div>
 
-          {/* Right: Introduction and social links */}
+          {/* RIGHT: About text and social links */}
           <div className="about__content">
             <div className="about__intro">
               <span className="about__intro-label">
@@ -120,12 +122,16 @@ function About() {
             <div className="about__connect">
               <div className="about__connect-heading">
                 <span>LET'S CONNECT</span>
-                <p>Find me online or get in touch.</p>
+                <p>
+                  Find me online or get in touch.
+                </p>
               </div>
 
               <div className="about__socials">
                 {socialLinks.map((social) => {
                   const Icon = social.icon;
+                  const isExternal =
+                    social.url.startsWith("https://");
 
                   return social.url ? (
                     <a
@@ -135,12 +141,10 @@ function About() {
                       aria-label={social.name}
                       title={social.name}
                       target={
-                        social.url.startsWith("http")
-                          ? "_blank"
-                          : undefined
+                        isExternal ? "_blank" : undefined
                       }
                       rel={
-                        social.url.startsWith("http")
+                        isExternal
                           ? "noopener noreferrer"
                           : undefined
                       }
@@ -149,14 +153,14 @@ function About() {
                       <span>{social.name}</span>
                     </a>
                   ) : (
-                    <div
+                    <span
                       key={social.name}
                       className="about__social-link about__social-link--disabled"
                       title={`${social.name} link coming soon`}
                     >
                       <Icon aria-hidden="true" />
                       <span>{social.name}</span>
-                    </div>
+                    </span>
                   );
                 })}
               </div>
