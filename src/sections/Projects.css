@@ -40,20 +40,12 @@
   color: var(--color-purple);
 }
 
-
-
 /* =========================================
    PROJECTS LAYOUT
 ========================================= */
 
 .projects-layout {
   display: grid;
-  gap: 24px;
-}
-
-.projects-secondary {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -123,7 +115,6 @@
   display: block;
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   object-position: center;
 
@@ -133,8 +124,6 @@
 .project-card:hover .project-visual img {
   transform: scale(1.025);
 }
-
-/* Featured image positioning */
 
 .project-card--featured .project-visual img {
   object-fit: cover;
@@ -302,7 +291,118 @@
 }
 
 /* =========================================
-   DESKTOP — HORIZONTAL SECONDARY CARDS
+   CAROUSEL HEADER & CONTROLS
+========================================= */
+
+.projects-carousel {
+  min-width: 0;
+}
+
+.projects-carousel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.projects-carousel-label {
+  color: var(--color-text-secondary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.projects-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.projects-carousel-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  color: var(--color-text-primary);
+  background: var(--color-bg-card);
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  font-family: inherit;
+  font-size: 1.15rem;
+  cursor: pointer;
+
+  transition:
+    color var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.projects-carousel-arrow:hover:not(:disabled) {
+  color: var(--color-purple);
+  border-color: var(--color-border-strong);
+  background-color: var(--color-bg-elevated);
+}
+
+.projects-carousel-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.projects-carousel-arrow:focus-visible,
+.projects-carousel-dot:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   HORIZONTAL PROJECT CAROUSEL
+========================================= */
+
+.projects-secondary {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 24px) / 2);
+  gap: 24px;
+
+  min-width: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scroll-padding-inline: 0;
+  overscroll-behavior-x: contain;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.projects-secondary::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-secondary .project-card {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.projects-secondary:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 4px;
+  border-radius: var(--radius-medium);
+}
+
+/* =========================================
+   DESKTOP — HORIZONTAL CARD CONTENT
 ========================================= */
 
 @media (min-width: 1100px) {
@@ -348,6 +448,38 @@
 }
 
 /* =========================================
+   CAROUSEL INDICATORS
+========================================= */
+
+.projects-carousel-indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.projects-carousel-dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+
+  background-color: var(--color-border-strong);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+
+  transition:
+    width var(--transition-normal),
+    background-color var(--transition-normal);
+}
+
+.projects-carousel-dot--active {
+  width: 24px;
+  background-color: var(--color-purple);
+}
+
+/* =========================================
    TABLET
 ========================================= */
 
@@ -367,6 +499,7 @@
 
   .projects-secondary {
     gap: 16px;
+    grid-auto-columns: calc((100% - 16px) / 2);
   }
 
   .projects-secondary .project-visual {
@@ -398,9 +531,13 @@
     gap: 18px;
   }
 
+  .projects-carousel-header {
+    margin-bottom: 14px;
+  }
+
   .projects-secondary {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-auto-columns: 88%;
+    gap: 14px;
   }
 
   .project-card--featured .project-visual {
@@ -428,6 +565,10 @@
 
   .project-links {
     gap: 20px;
+  }
+
+  .projects-carousel-indicators {
+    margin-top: 16px;
   }
 }
 
@@ -463,7 +604,9 @@
 @media (prefers-reduced-motion: reduce) {
   .project-card,
   .project-visual img,
-  .project-links a {
+  .project-links a,
+  .projects-carousel-arrow,
+  .projects-carousel-dot {
     transition: none;
   }
 
@@ -471,5 +614,9 @@
   .project-card:hover .project-visual img,
   .project-links a:hover {
     transform: none;
+  }
+
+  .projects-secondary {
+    scroll-behavior: auto;
   }
 }
