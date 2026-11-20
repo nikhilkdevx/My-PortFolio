@@ -13,7 +13,7 @@ import "./Contact.css";
 const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/nikhilikdevx",
+    url: "https://github.com/nikhilkdevx",
     Icon: FaGithub,
   },
   {
