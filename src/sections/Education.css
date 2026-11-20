@@ -249,3 +249,17 @@
     transform: none;
   }
 }
+
+.education__certificate-link {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--color-purple);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.education__certificate-link:hover {
+  color: var(--color-purple-hover);
+  text-decoration: underline;
+}

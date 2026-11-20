@@ -8,6 +8,7 @@ const achievements = [
     subtitle: "BITS Pilani",
     description:
       "Achieved a Top 10 finish as part of a team in the KRITI hackathon.",
+    certificate: "/certificates/kriti-2026.pdf",
   },
   {
     number: "02",
@@ -123,6 +124,16 @@ function Education() {
                     <p className="education__card-description">
                       {achievement.description}
                     </p>
+                    {achievement.certificate && (
+                        <a
+                        href={achievement.certificate}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="education__certificate-link"
+                        >
+                            View Certificate ↗
+                        </a>
+                    )}
                   </div>
                 </article>
               ))}
