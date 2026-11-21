@@ -53,7 +53,7 @@ function Navbar() {
           </a>
 
           <a
-            href="/resume.pdf"
+            href="/certificates/NIK.pdf"
             className="navbar-resume"
             target="_blank"
             rel="noopener noreferrer"
