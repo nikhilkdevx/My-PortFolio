@@ -49,38 +49,17 @@ function About() {
           {/* LEFT: Introduction video */}
           <div className="about__video-column">
             <div className="about__video-frame">
-              {/*
-                When your video is ready, replace the
-                placeholder below with:
-
                 <video
                   controls
                   playsInline
                   preload="metadata"
-                  poster="/images/about-poster.jpg"
+                  poster="/images/about.png"
                 >
                   <source
-                    src="/videos/about-me.mp4"
+                    src="/videos/Intro.mp4"
                     type="video/mp4"
                   />
                 </video>
-              */}
-
-              <div className="about__video-placeholder">
-                <div className="about__play-icon">
-                  <FaPlay aria-hidden="true" />
-                </div>
-
-                <span className="about__video-label">
-                  MY STORY
-                </span>
-
-                <p>
-                  A personal introduction
-                  <br />
-                  Coming soon
-                </p>
-              </div>
             </div>
           </div>
 
