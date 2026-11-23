@@ -79,7 +79,7 @@ function Education() {
               <div className="education__degree-footer">
                 <div>
                   <span className="education__stat-value">
-                    9.2<span>/10</span>
+                    8.98<span>/10</span>
                   </span>
                   <span className="education__stat-label">
                     Current CGPA
